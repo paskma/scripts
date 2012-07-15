@@ -2,9 +2,14 @@
 
 INSTALL_ROOT=`pwd`
 
+git clone git://github.com/paskma/pypy-sc.git
+svn co http://codespeak.net/svn/py/dist/py@60839
+ln -s ../py pypy-sc/py
+git clone git@github.com:paskma/framework-parlib.git
+
 wget http://www.python.org/ftp/python/2.4.4/Python-2.4.4.tgz
 tar xf Python-2.4.4.tgz
-Python-2.4.4
+cd Python-2.4.4
 patch -p1 < ../framework-parlib/misc/disable_hash.patch
 ./configure --prefix=$INSTALL_ROOT/python24
 make
@@ -20,11 +25,6 @@ cd jpf_trunk
 java RunAnt run-tests
 cd ..
 
-git clone git://github.com/paskma/pypy-sc.git
-svn co http://codespeak.net/svn/py/dist/py@60839
-ln -s ../py pypy-sc/py
-git clone git@github.com:paskma/framework-parlib.git
-
 echo "PARLIB_FRAMEWORK_ROOT=\"$INSTALL_ROOT/framework-parlib\"" > framework-parlib/environment.sh
 echo "PYPY_ROOT=\"$INSTALL_ROOT/pypy-sc\"" >> framework-parlib/environment.sh
 echo "PYTHON_BIN=\"$INSTALL_ROOT/python24/bin/python\"" >> framework-parlib/environment.sh
@@ -35,4 +35,4 @@ cd framework-parlib/binding/c
 ./compile.sh
 cd ../../..
 
-export PATH="$INSTALL_ROOT:$PATH"
+export PATH="$INSTALL_ROOT/framework-parlib/bin:$PATH"
