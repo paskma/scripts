@@ -2,10 +2,10 @@
 
 INSTALL_ROOT=`pwd`
 
-git clone git://github.com/paskma/pypy-sc.git
+git clone https://github.com/paskma/pypy-sc.git
 svn co http://codespeak.net/svn/py/dist/py@60839
 ln -s ../py pypy-sc/py
-git clone git@github.com:paskma/framework-parlib.git
+git clone https://github.com/paskma/framework-parlib.git
 
 wget http://www.python.org/ftp/python/2.4.4/Python-2.4.4.tgz
 tar xf Python-2.4.4.tgz
