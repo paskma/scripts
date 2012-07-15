@@ -16,8 +16,7 @@ make
 make -i install
 cd ..
 
-wget http://sourceforge.net/projects/jasmin/files/jasmin/jasmin-2.2/jasmin-2.2.zip/download
-mv download jasmin-2.2.zip
+wget -O jasmin-2.2.zip http://sourceforge.net/projects/jasmin/files/jasmin/jasmin-2.2/jasmin-2.2.zip/download
 unzip jasmin-2.2.zip
 
 svn checkout https://javapathfinder.svn.sourceforge.net/svnroot/javapathfinder/trunk -r 1790 jpf_trunk
