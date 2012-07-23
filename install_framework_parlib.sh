@@ -34,4 +34,14 @@ cd framework-parlib/binding/c
 ./compile.sh
 cd ../../..
 
-export PATH="$INSTALL_ROOT/framework-parlib/bin:$PATH"
+# We need to make user execute this command in his shell:
+#export PATH="$INSTALL_ROOT/framework-parlib/bin:$PATH"
+
+echo "Execute the following command in your shell:"
+echo -n 'export PATH="'
+echo -n $INSTALL_ROOT
+echo '/framework-parlib/bin:$PATH"'
+
+
+
+
