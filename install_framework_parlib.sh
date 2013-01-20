@@ -3,7 +3,9 @@
 INSTALL_ROOT=`pwd`
 
 git clone https://github.com/paskma/pypy-sc.git
-svn co http://codespeak.net/svn/py/dist/py@60839
+
+#This does not work any longer: svn co http://codespeak.net/svn/py/dist/py@60839
+git clone https://github.com/paskma/py.git py
 ln -s ../py pypy-sc/py
 git clone https://github.com/paskma/framework-parlib.git
 
